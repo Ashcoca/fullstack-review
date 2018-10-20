@@ -2,11 +2,11 @@ const express = require('express');
 let app = express();
 var bodyParser = require('body-parser')
 var helper = require('../helpers/github.js')
-
+const save = require('../database/index.js')
 
 app.use(express.static(__dirname + '/../client/dist'));
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
